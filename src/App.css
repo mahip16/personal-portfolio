@@ -1,0 +1,240 @@
+/* Custom Font */
+@font-face {
+  font-family: Centra;
+  src: url('./assets/font/CentraNo2-Light.ttf');
+  font-weight: 700;
+}
+@font-face {
+  font-family: Centra;
+  src: url('./assets/font/CentraNo2-Medium.ttf');
+  font-weight: 500;
+}
+@font-face {
+  font-family: Centra;
+  src: url('./assets/font/CentraNo2-Book.ttf');
+  font-weight: 400;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 75px;
+}
+
+body {
+  font-weight: 400;
+  overflow-x: hidden;
+  background-color: #121212 !important;
+  color: #fff !important;
+  font-family: 'Centra', sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+  line-height: normal;
+}
+
+/************ Navbar ************/
+.custom-navbar-wrapper {
+  position: fixed;
+  top: 20px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px 0 40px;
+  z-index: 9999;
+  transition: all 0.5s ease-in-out;
+}
+
+.custom-navbar-wrapper.scrolled {
+  justify-content: center;
+  padding: 0;
+}
+
+.custom-navbar-wrapper.scrolled .navbar-logo,
+.custom-navbar-wrapper.scrolled .social-icon,
+.custom-navbar-wrapper.scrolled .vvd {
+  display: none;
+}
+
+.custom-navbar-wrapper.scrolled .nav-pill {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 8px 16px;
+}
+
+/* Logo */
+.navbar-logo {
+  font-family: 'Pinyon Script', cursive;
+  font-size: 42px;
+  color: #fff;
+  text-decoration: none;
+  line-height: 1;
+}
+
+/* Right side grouping */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-right: 60px;
+}
+
+/* Nav Pill */
+.nav-pill {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  border-radius: 50px;
+  padding: 6px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.5s ease-in-out;
+}
+
+/* Nav Links */
+.nav-pill-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 400;
+  padding: 6px 16px;
+  border-radius: 50px;
+  opacity: 0.7;
+  transition: color 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.nav-pill-link::before {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  background-color: #fff;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  border-radius: 50px;
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-pill-link:hover {
+  opacity: 1;
+  color: #121212;
+}
+
+.nav-pill-link:hover::before {
+  width: 100%;
+}
+
+/* Active link */
+.nav-pill-link.active {
+  opacity: 1;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.nav-pill-link.active:hover {
+  color: #121212;
+  background: transparent;
+}
+
+.nav-pill-link.active:hover::before {
+  width: 100%;
+}
+
+/* Social Icons */
+.social-icon {
+  display: inline-flex;
+  gap: 8px;
+}
+
+.social-icon a {
+  width: 38px;
+  height: 38px;
+  background: rgba(217, 217, 217, 0.1);
+  display: inline-flex;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.social-icon a::before {
+  content: "";
+  width: 38px;
+  height: 38px;
+  position: absolute;
+  background-color: #ffffff;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 0.3s ease-in-out;
+}
+
+.social-icon a:hover::before {
+  transform: scale(1);
+}
+
+.social-icon a img {
+  width: 40%;
+  z-index: 1;
+  transition: 0.3s ease-in-out;
+  filter: brightness(0) invert(1);
+}
+
+.social-icon a:hover img {
+  filter: brightness(0) saturate(100%) invert(0%) sepia(7%) saturate(98%) hue-rotate(346deg) brightness(95%) contrast(86%);
+}
+
+/* Let's Connect Button */
+.vvd {
+  font-weight: 700;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 12px 24px;
+  font-size: 16px;
+  position: relative;
+  background-color: transparent;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.vvd span {
+  z-index: 1;
+  position: relative;
+}
+
+.vvd::before {
+  content: "";
+  width: 0%;
+  height: 100%;
+  position: absolute;
+  background-color: #fff;
+  left: 0;
+  top: 0;
+  z-index: 0;
+  transition: 0.3s ease-in-out;
+}
+
+.vvd:hover {
+  color: #121212;
+}
+
+.vvd:hover::before {
+  width: 100%;
+}
