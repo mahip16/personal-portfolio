@@ -71,6 +71,8 @@ h1, h2, h3, h4, h5, h6 {
   color: #fff;
   text-decoration: none;
   line-height: 1;
+  animation: fadeSlideUp 0.8s ease 0.1s forwards;
+  opacity: 0;
 }
 
 /* Right side grouping */
@@ -90,6 +92,8 @@ h1, h2, h3, h4, h5, h6 {
   padding: 6px 10px;
   border: 1px solid rgba(255, 255, 255, 0.15);
   transition: all 0.5s ease-in-out;
+  animation: fadeSlideUp 0.8s ease 0.3s forwards;
+  opacity: 0;
 }
 
 /* Nav Links */
@@ -149,6 +153,8 @@ h1, h2, h3, h4, h5, h6 {
 .social-icon {
   display: inline-flex;
   gap: 8px;
+  animation: fadeSlideUp 0.8s ease 0.5s forwards;
+  opacity: 0;
 }
 
 .social-icon a {
@@ -203,6 +209,8 @@ h1, h2, h3, h4, h5, h6 {
   transition: 0.3s ease-in-out;
   cursor: pointer;
   overflow: hidden;
+  animation: fadeSlideUp 0.8s ease 0.7s forwards;
+  opacity: 0;
 }
 
 .vvd span {
