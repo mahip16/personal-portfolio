@@ -5,7 +5,7 @@
   align-items: flex-start; /* left-aligned like most portfolios */
   justify-content: center;
   padding-left: 100px;
-  padding-top: 150px;
+  padding-top: 80px;
 }
 
 .hero-title {
@@ -72,3 +72,52 @@
   box-shadow: 0 0 25px rgba(180, 50, 120, 0.5);
   transform: translateY(-2px);
 }
+
+.hero-section {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hero-image {
+  display: flex;
+  justify-content: center;
+  padding-right:200px;
+  padding-bottom: 0px;
+  animation: fadeSlideLeft 0.8s ease 0.4s forwards;
+  opacity: 0;
+}
+
+@keyframes fadeSlideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.hero-pfp {
+  width: 350px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid rgba(232, 121, 176, 0.4);
+  box-shadow: 0 0 40px rgba(232, 121, 176, 0.2);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease; 
+}
+
+.hero-pfp:hover {
+  border-color: rgba(232, 121, 176, 0.6);
+  box-shadow: 0 0 50px rgba(232, 121, 176, 0.3),
+              0 0 80px rgba(232, 121, 176, 0.15);
+}
+

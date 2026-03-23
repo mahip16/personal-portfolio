@@ -1,14 +1,15 @@
 import { useState, useEffect } from 'react'
 import "./Hero.css"
+import pfp from '../assets/img/pfp.png'
 
 function Hero() {
   const [text, setText] = useState('');
   const [index, setIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   
-  const phrases = ['Full Stack Developer', 'CS Student @ TMU', 'ML Enthusiast'];
 
     useEffect(() => {
+    const phrases = ['Full Stack Developer', 'CS Student @ TMU', 'ML Enthusiast'];
     const currentPhrase = phrases[index];
 
     if (!isDeleting && text === currentPhrase) {
@@ -38,9 +39,14 @@ function Hero() {
 
   return (
     <section className="hero-section" id="home">
-        <h1 className="hero-title">Mahi Patel</h1>
-        <p className="hero-subtitle">{text}<span className="cursor">|</span></p>
-        <button className="hero-btn">View my work</button>
+        <div className="hero-content">
+            <h1 className="hero-title">Mahi Patel</h1>
+            <p className="hero-subtitle">{text}<span className="cursor">|</span></p>
+            <button className="hero-btn">View My Work</button>
+        </div>
+        <div className="hero-image">
+            <img src={pfp} alt="Mahi Patel" className="hero-pfp" />
+        </div>
     </section>
   )
 }
