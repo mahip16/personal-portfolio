@@ -3,6 +3,8 @@ import { NavBar } from "./components/Navbar.jsx"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Hero from "./components/Hero.jsx"
 import { Skills } from "./components/Skills.jsx"
+import { Projects } from "./components/Projects.jsx"
+
 
 function App() {
   return (
@@ -10,6 +12,7 @@ function App() {
       <NavBar />  
       <Hero />   
       <Skills />   
+      <Projects />
     </div>
   )
 }
