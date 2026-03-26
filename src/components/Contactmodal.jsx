@@ -32,15 +32,18 @@ export const ContactModal = ({ isOpen, onClose }) => {
     setForm(prev => ({ ...prev, [e.target.name]: e.target.value }))
   }
 
-  const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
     e.preventDefault()
     setStatus('sending')
-    // Simulate send — wire up to EmailJS / Formspree / etc. here
-    setTimeout(() => {
-      setStatus('sent')
-      setForm({ name: '', email: '', message: '' })
-    }, 1200)
-  }
+    await fetch('https://formspree.io/f/xkopnvvv', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form)
+    })
+    setStatus('sent')
+    setForm({ name: '', email: '', message: '' })
+    }
+
 
   return (
     <div
