@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
 import './Projects.css'
 import f1Gif from '../assets/img/f1.gif'
+import suppleGif from '../assets/img/SuppleScan.gif'
+
 
 const useInView = (threshold = 0.15) => {
   const ref = useRef(null)
@@ -84,7 +86,7 @@ export const Projects = () => {
 
         <div className="project-block reverse">
           <AnimatedBlock inView={suppInView} delay={0.2} className="project-block-image">
-            <div className="project-block-placeholder"><span>💊</span></div>
+            <img src={suppleGif} alt="SuppleScan" className="project-block-gif" />
           </AnimatedBlock>
 
           <div className="project-block-info">

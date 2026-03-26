@@ -49,6 +49,14 @@
   animation: fadeSlideUp 1s ease forwards, blueGlow 2s ease forwards;
 }
 
+.blue-theme .project-block-gif {
+  filter: drop-shadow(0 0 50px rgba(50, 100, 220, 0.4)) brightness(0.75);
+  width: auto;
+  max-width: 280px;
+  margin: 0 auto;
+  display: block;
+}
+
 /* Accent text colors */
 .accent-red {
   color: rgba(255, 100, 100, 0.95);
