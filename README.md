@@ -2,7 +2,7 @@
 
 My personal portfolio built with React + Vite, deployed on Vercel.
 
-🌐 **Live:** https://personal-portfolio-nu-gold.vercel.app/
+🌐 **Live:** https://mahi-patel.vercel.app/
 
 ## Built With
 - React + Vite
