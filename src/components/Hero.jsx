@@ -35,15 +35,18 @@ function Hero() {
 
     return () => clearTimeout(timer);
     }, [text, isDeleting, index]);
-
+  
+    const scrollToProjects = () => {
+        document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })
+    }
 
   return (
     <section className="hero-section" id="home">
         <div className="hero-content">
             <h1 className="hero-title">Mahi Patel</h1>
             <p className="hero-subtitle">{text}<span className="cursor">|</span></p>
-            <button className="hero-btn">View My Work</button>
-        </div>
+            <button className="hero-btn" onClick={scrollToProjects}>View My Work</button>
+            </div>
         <div className="hero-image">
             <img src={pfp} alt="Mahi Patel" className="hero-pfp" />
         </div>

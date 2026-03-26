@@ -7,7 +7,7 @@ import { About } from "./components/About.jsx"
 import { Skills } from "./components/Skills.jsx"
 import { Projects } from "./components/Projects.jsx"
 import { ContactModal } from "./components/Contactmodal.jsx"
-
+import { Footer } from "./components/Footer.jsx"
 
 function App() {
   const [contactOpen, setContactOpen] = useState(false)
@@ -19,6 +19,7 @@ function App() {
       <About /> 
       <Skills />   
       <Projects />
+      <Footer onConnect={() => setContactOpen(true)} />
       <ContactModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
     </div>
   )
