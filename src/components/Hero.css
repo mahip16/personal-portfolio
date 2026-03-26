@@ -87,6 +87,8 @@
 
 .hero-image {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   padding-right:200px;
   padding-bottom: 0px;
@@ -113,6 +115,12 @@
   border: 3px solid rgba(232, 121, 176, 0.4);
   box-shadow: 0 0 40px rgba(232, 121, 176, 0.2);
   transition: box-shadow 0.3s ease, border-color 0.3s ease; 
+  animation: pfpPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes pfpPulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(232, 121, 176, 0.15); }
+  50%       { box-shadow: 0 0 35px rgba(232, 121, 176, 0.35), 0 0 60px rgba(232, 121, 176, 0.12); }
 }
 
 .hero-pfp:hover {
@@ -121,3 +129,21 @@
               0 0 80px rgba(232, 121, 176, 0.15);
 }
 
+.hero-pfp-label {
+  display: inline-block;
+  margin-top: 18px;
+  font-size: 12px;
+  font-family: 'DM Sans', sans-serif;
+  color: rgba(232, 121, 176, 0.9);
+  letter-spacing: 0.1em;
+  padding: 6px 18px;
+  border: 1px solid rgba(232, 121, 176, 0.3);
+  border-radius: 50px;
+  background: rgba(232, 121, 176, 0.05);
+  cursor: pointer;
+}
+
+.hero-pfp-label:hover {
+  background: rgba(232, 121, 176, 0.12);
+  border-color: rgba(232, 121, 176, 0.6);
+}

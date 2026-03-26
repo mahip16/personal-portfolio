@@ -2,19 +2,31 @@ import { useState, useEffect } from "react";
 import navIcon1 from "../assets/img/nav-icon1.svg";
 import gitHub from "../assets/img/github.svg";
 
+const sections = ['home', 'about', 'skills', 'projects'];
+
 export const NavBar = ({ onConnect }) => {
   const [activeLink, setActiveLink] = useState('home');
   const [scrolled, setScrolled] = useState(false);
 
-  useEffect(() => { 
+  useEffect(() => {
     const onScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true); 
-      } else {
-        setScrolled(false); 
+      setScrolled(window.scrollY > 50);
+
+      // Find which section is currently in view
+      let current = 'home';
+      for (const id of sections) {
+        const el = document.getElementById(id);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= window.innerHeight * 0.4) {
+            current = id;
+          }
+        }
       }
+      setActiveLink(current);
     };
-    window.addEventListener('scroll', onScroll);
+
+    window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
@@ -24,14 +36,25 @@ export const NavBar = ({ onConnect }) => {
 
       <div className="navbar-right">
         <nav className="nav-pill">
-          <a href="#home" className={`nav-pill-link ${activeLink === 'home' ? 'active' : ''}`} onClick={() => setActiveLink('home')}>Home</a>
-          <a href="#skills" className={`nav-pill-link ${activeLink === 'skills' ? 'active' : ''}`} onClick={() => setActiveLink('skills')}>Skills</a>
-          <a href="#projects" className={`nav-pill-link ${activeLink === 'projects' ? 'active' : ''}`} onClick={() => setActiveLink('projects')}>Projects</a>
+          {[['home', 'Home'], ['about', 'About'], ['skills', 'Skills'], ['projects', 'Projects']].map(([id, label]) => (
+            <a
+              key={id}
+              href={`#${id}`}
+              className={`nav-pill-link ${activeLink === id ? 'active' : ''}`}
+              onClick={() => setActiveLink(id)}
+            >
+              {label}
+            </a>
+          ))}
         </nav>
 
         <div className="social-icon">
-          <a href="https://www.linkedin.com/in/mahiptl/"><img src={navIcon1} alt="LinkedIn" /></a>
-          <a href="https://github.com/mahip16"><img src={gitHub} alt="GitHub" /></a>
+          <a href="https://www.linkedin.com/in/mahiptl/" target="_blank" rel="noreferrer">
+            <img src={navIcon1} alt="LinkedIn" />
+          </a>
+          <a href="https://github.com/mahip16" target="_blank" rel="noreferrer">
+            <img src={gitHub} alt="GitHub" />
+          </a>
         </div>
         <button className="vvd" onClick={onConnect}><span>Let's Connect</span></button>
       </div>

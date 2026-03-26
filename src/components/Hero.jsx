@@ -52,14 +52,17 @@ function Hero() {
             <button className="hero-btn" onClick={scrollToProjects}>View My Work</button>
             </div>
         <div className="hero-image">
-          <img
-            src={pfp}
-            alt="Mahi Patel"
-            className="hero-pfp"
-            onClick={() => setTerminalOpen(true)}
-            style={{ cursor: 'pointer' }}
-          />
-        </div>
+            <div className="hero-pfp-wrapper" onClick={() => setTerminalOpen(true)}>
+                <img
+                src={pfp}
+                alt="Mahi Patel"
+                className="hero-pfp"
+                />
+            </div>
+            <span className="hero-pfp-label" onClick={() => setTerminalOpen(true)}>
+                ↑ click to learn more
+                </span>
+            </div>
     </section>
 
     <PfpTerminal key={terminalOpen ? 'open' : 'closed'} isOpen={terminalOpen} onClose={() => setTerminalOpen(false)} />
