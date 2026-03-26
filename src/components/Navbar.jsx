@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import navIcon1 from "../assets/img/nav-icon1.svg";
 import gitHub from "../assets/img/github.svg";
 
-export const NavBar = () => {
+export const NavBar = ({ onConnect }) => {
   const [activeLink, setActiveLink] = useState('home');
   const [scrolled, setScrolled] = useState(false);
 
@@ -33,7 +33,7 @@ export const NavBar = () => {
           <a href="https://www.linkedin.com/in/mahiptl/"><img src={navIcon1} alt="LinkedIn" /></a>
           <a href="https://github.com/mahip16"><img src={gitHub} alt="GitHub" /></a>
         </div>
-        <button className="vvd" onClick={() => console.log('connect')}><span>Let's Connect</span></button>
+        <button className="vvd" onClick={onConnect}><span>Let's Connect</span></button>
       </div>
     </div>
   )
