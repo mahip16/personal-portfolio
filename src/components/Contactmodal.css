@@ -38,7 +38,14 @@
   transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: -20px 0 60px rgba(0, 0, 0, 0.5);
   position: fixed; /* override above */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE */
 }
+
+.cm-panel::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
 
 .cm-panel-open {
   transform: translateX(0);

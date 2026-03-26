@@ -70,7 +70,9 @@ export const Footer = ({ onConnect }) => {
         <div className={`footer-bottom anim-block ${started ? 'anim-in' : ''}`} style={{ animationDelay: '0.6s' }}>
           <p>© {new Date().getFullYear()} Mahi Patel. All rights reserved.</p>
           <p className="footer-email">
-            <a href="mailto:mahip1606@gmail.com">mahip1606@gmail.com</a>
+            <a href="https://mail.google.com/mail/?view=cm&to=mahip1606@gmail.com" target="_blank" rel="noreferrer">
+                mahip1606@gmail.com
+            </a>
           </p>
         </div>
 
