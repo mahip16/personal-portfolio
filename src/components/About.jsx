@@ -18,11 +18,17 @@ const events = [
     desc: '15 years of data. 10,000 simulations per race. 0.088 log-loss on an unseen season. Live on Vercel.',
   },
   {
-    year: 'Now',
-    title: 'Open to co-op',
-    desc: 'Available for 4, 8, or 12 months. Looking for a team that ships real things.',
+    year: 'May 2026',
+    title: 'First Co-op Term: Lyvechat (Software & Product Specialist)',
+    desc: 'Gained hands-on experience in a startup software development environment.',
     active: true,
   },
+  {
+    year: 'Sept 2026',
+    title: 'Second Co-op Term: TD Bank (Quality Engineer)',
+    desc: 'Starting soon.',
+    active: true,
+  }
 ]
 
 const TimelineItem = ({ event, index, onLineRef, onDotRef }) => {

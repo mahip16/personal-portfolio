@@ -11,7 +11,7 @@ const lines = [
 ]
 
 const stats = [
-  { value: 2, suffix: '+', label: 'Years of Experience' },
+  { value: 3, suffix: '+', label: 'Years of Experience' },
   { value: 2, suffix: '', label: 'Projects Shipped' },
   { value: 2, suffix: '', label: 'Live Deployment' },
   { value: 10, suffix: '+', label: 'Technologies' },
