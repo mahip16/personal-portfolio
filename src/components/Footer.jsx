@@ -3,7 +3,7 @@ import './Footer.css'
 import navIcon1 from '../assets/img/nav-icon1.svg'
 import gitHub from '../assets/img/github.svg'
 
-const links = ['Home', 'About', 'Skills', 'Projects']
+const links = ['Home', 'About', 'Experience', 'Skills', 'Projects']
 
 export const Footer = ({ onConnect }) => {
   const [started, setStarted] = useState(false)
