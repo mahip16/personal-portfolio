@@ -8,6 +8,7 @@ import { Skills } from "./components/Skills.jsx"
 import { Projects } from "./components/Projects.jsx"
 import { ContactModal } from "./components/Contactmodal.jsx"
 import { Footer } from "./components/Footer.jsx"
+import { Experience } from "./components/Experience.jsx"
 
 function App() {
   const [contactOpen, setContactOpen] = useState(false)
@@ -17,6 +18,7 @@ function App() {
       <NavBar onConnect={() => setContactOpen(true)} /> 
       <Hero />  
       <About /> 
+      <Experience />
       <Skills />   
       <Projects />
       <Footer onConnect={() => setContactOpen(true)} />
