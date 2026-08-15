@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import navIcon1 from "../assets/img/nav-icon1.svg";
 import gitHub from "../assets/img/github.svg";
 
-const sections = ['home', 'about', 'skills', 'projects'];
+const sections = ['home', 'about', 'experience', 'skills', 'projects'];
 
 export const NavBar = ({ onConnect }) => {
   const [activeLink, setActiveLink] = useState('home');
@@ -36,7 +36,7 @@ export const NavBar = ({ onConnect }) => {
 
       <div className="navbar-right">
         <nav className="nav-pill">
-          {[['home', 'Home'], ['about', 'About'], ['skills', 'Skills'], ['projects', 'Projects']].map(([id, label]) => (
+          {[['home', 'Home'], ['about', 'About'], ['experience', 'Experience'], ['skills', 'Skills'], ['projects', 'Projects']].map(([id, label]) => (
             <a
               key={id}
               href={`#${id}`}
